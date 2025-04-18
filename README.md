@@ -1,64 +1,44 @@
-# 📈 FidelFolio: Market Cap Growth Prediction using Deep Learning
+# FidelFolio Mid Prep — Finance + Deep Learning
 
-This repository contains our solution for the **FidelFolio General Championship TECH Challenge**, focused on predicting **1-year, 2-year, and 3-year forward market capitalization growth** for Indian listed companies using deep learning techniques.
+##  Problem Statement
 
----
-
-## 🧠 Objective
-
-To build a deep learning model that accurately predicts future market cap growth based on historical **fundamental financial indicators**. The task involves time-series modeling, careful handling of missing data, and feature-driven predictive analysis.
+In equity markets, valuation and investment decisions are driven by fundamental indicators such as earnings, margins, growth rates, and capital structure. This project aims to build deep learning models that predict **market capitalization growth** of Indian listed companies using a curated dataset of **historical fundamental features**.
+You are to model complex, non-linear relationships between these indicators and future market performance across **1-year, 2-year, and 3-year time horizons**.
 
 ---
 
-## 📊 Dataset Overview
+## 🗂 Dataset Overview
 
-- **Total Rows**: 24,751  
-- **Total Columns**: 33  
-  - 28 Financial features  
-  - 3 Target variables:  
-    - `Target 1`: 1-Year Forward Market Cap Growth (%)  
-    - `Target 2`: 2-Year Forward Market Cap Growth (%)  
-    - `Target 3`: 3-Year Forward Market Cap Growth (%)  
-- **Time Span**: 1999 to 2024  
-- **Granularity**: One row per company per fiscal year (panel time-series format)
+Each data sample includes:
+- **Year**: Fiscal year of the snapshot
+- **Company**: Name of the listed Indian company
+- **Feature1 - Feature28**: 28 financial indicators
+- **Target1**: 1-year forward market cap growth (%)
+- **Target2**: 2-year forward market cap growth (%)
+- **Target3**: 3-year forward market cap growth (%)
 
----
-
-## 🧼 Data Preprocessing Pipeline
-
-1. **Temporal Expansion**:  
-   Ensure complete company timelines up to 2020, even with missing intermediate years.
-
-2. **Founding Year Imputation**:  
-   Use **spatial nearest neighbors** (similar companies in same year) to fill in starting values.
-
-3. **Temporal Imputation**:  
-   - Used `IterativeImputer` (sklearn)  
-   - Combined with **linear interpolation** for year-wise continuity  
-   - Ensures **no data leakage** from future periods
-
-4. **Outlier Detection & Correction**:  
-   - Applied `Isolation Forest` on a per-year basis  
-   - Replaced outliers with **median of 3 nearest non-outlier neighbors**
+Dataset link: [Google Drive](https://drive.google.com/file/d/13pZZNGg9xaCVVNs4yLHfZQhK9VJ4DNQt/view?usp=drive_link)
 
 ---
 
-## 🧪 Modeling Approach
+##  Steps to Run the Project
+1.Install Required Libraries
+pip install -r requirements.txt
 
-- Deep Learning Architectures :
-  - `LSTM`, `GRU`, `CNN`, `Dense` Layers
-- Framework: TensorFlow / Keras  
-- Optimization: `Adam`, `EarlyStopping`  
-- Tuning: `Keras Tuner`, `RandomizedSearchCV`  
-- Baseline Models: `LinearRegression`, `DecisionTreeRegressor`, `SVR`
+2.Preprocessing
+Missing Value Imputation
+Outlier Handling (via IQR/Winsorisation)
+Feature Normalization
+Avoiding Data Leakage: Only past data is used for training.
 
----
+3.We experimented with a range of deep learning models:
+MLP (Multi-Layer Perceptron)
+LSTM (Long Short-Term Memory)
+Transformer-Based Tabular Models
 
-## 📏 Evaluation
+4.Models were evaluated on Root Mean Squared Error (RMSE) across:
+Target1: 1Y forward growth
+Target2: 2Y forward growth
+Target3: 3Y forward growth
 
-- **Metric**: RMSE (Root Mean Squared Error)  
-- Comparison across:
-  - Different model types
-  - Short vs. long horizon targets (1Y vs 3Y)
-
----
+5.Feature importance visualizations
