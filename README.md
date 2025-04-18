@@ -7,7 +7,7 @@ You are to model complex, non-linear relationships between these indicators and 
 
 ---
 
-## 🗂 Dataset Overview
+##  Dataset Overview
 
 Each data sample includes:
 - **Year**: Fiscal year of the snapshot
