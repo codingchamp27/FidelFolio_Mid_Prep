@@ -45,7 +45,7 @@ To build a deep learning model that accurately predicts future market cap growth
 
 ## 🧪 Modeling Approach
 
-- Deep Learning Architectures:
+- Deep Learning Architectures :
   - `LSTM`, `GRU`, `CNN`, `Dense` Layers
 - Framework: TensorFlow / Keras  
 - Optimization: `Adam`, `EarlyStopping`  
