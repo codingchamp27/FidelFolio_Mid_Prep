@@ -75,3 +75,12 @@ pip install pandas numpy scikit-learn matplotlib seaborn tensorflow keras keras-
   - Short vs. long horizon targets (1Y vs 3Y)
 
 ---
+
+## 👥 Team
+
+- **Surya**  
+- **Harsh**  
+- **Niviti**
+
+---
+
