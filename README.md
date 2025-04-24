@@ -78,9 +78,9 @@ pip install pandas numpy scikit-learn matplotlib seaborn tensorflow keras keras-
 
 ## 👥 Team
 
-- **Surya**  
-- **Harsh**  
-- **Niviti**
+- **Surya Kamesh Mantha - 23118076**  
+- **Harsh Kumar - 23116038**  
+- **Niviti Sharma - 23117093**
 
 ---
 
